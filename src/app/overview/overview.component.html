@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>🌽 Fruit Farm 🥦</h1>
+  
+  <div class="cards-container">
+    <figure class="card" *ngFor="let fruit of fruits">
+      <div class="card__emoji">{{ fruit.image }}</div>
+  
+      <div class="card__title-box">
+        <h2 class="card__title">{{ fruit.productName }}</h2>
+      </div>
+  
+      <div class="card__details">
+        <div class="card__detail-box">
+          <h6 class="card__detail card__detail--organic">{{fruit.organic ? 'Organic!' : ''}}</h6>
+        </div>
+  
+        <div class="card__detail-box">
+          <h6 class="card__detail">{{fruit.quantity}} per 📦</h6>
+        </div>
+  
+        <div class="card__detail-box">
+          <h6 class="card__detail card__detail--price">{{ fruit.price}}€</h6>
+        </div>
+      </div>
+  
+      <a class="card__link" [routerLink]="['/product', fruit.id]">
+        <span>Detail <i class="emoji-right">👉</i></span>
+      </a>
+    </figure>  
+  </div>
+</div>
